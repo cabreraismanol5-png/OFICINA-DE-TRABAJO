@@ -1,0 +1,22 @@
+[build]
+  publish = "public"
+
+# Netlify serves the frontend, while the Node/SQLite API runs on Render.
+# These proxy rules keep /api/... same-origin from the browser.
+[[redirects]]
+  from = "/api/*"
+  to = "https://oficina-trabajo-virtual.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/health"
+  to = "https://oficina-trabajo-virtual.onrender.com/health"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/admin"
+  to = "https://oficina-trabajo-virtual.onrender.com/admin"
+  status = 200
+  force = true

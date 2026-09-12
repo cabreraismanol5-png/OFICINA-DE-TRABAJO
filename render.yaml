@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: oficina-trabajo-virtual
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PASSWORD_PEPPER
+        generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ALLOW_NETLIFY_ORIGIN
+        value: "true"
+      # Optional: for a custom Netlify domain, add it as FRONTEND_ORIGINS.
+      # Example: https://mi-sitio.netlify.app
+    disk:
+      name: oficina-data
+      mountPath: /app/data
+      sizeGB: 1

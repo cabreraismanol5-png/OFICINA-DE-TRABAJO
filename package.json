@@ -1,0 +1,15 @@
+{
+  "name": "oficina-trabajo-virtual-produccion",
+  "version": "4.7.0",
+  "private": true,
+  "description": "Sistema de acceso y verificación de producción para Oficina de Trabajo Virtual",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0"
+  }
+}
